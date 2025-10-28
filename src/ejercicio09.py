@@ -34,6 +34,16 @@ def simular_carrera(velocidad1: int, velocidad2: int, velocidad3: int, distancia
         - Todos los caracoles avanzan simultáneamente cada turno
     """
     # TODO: Implementar la función
+
+    if velocidad1 < 1 or velocidad1 > 10:
+        return (0, 0)
+
+
+
+
+
+
+
     return (0, 0)
 
 

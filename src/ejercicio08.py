@@ -31,8 +31,23 @@ def validar_contrasena(contrasena: str) -> tuple[bool, int, int, int, int, int]:
         - Comparar caracteres: 'A' <= c <= 'Z', 'a' <= c <= 'z', '0' <= c <= '9'
     """
     # TODO: Implementar la función
-    return (False, 0, 0, 0, 0, 0)
 
+    tiene_longitud = int(len(contrasena) >= 8)
+    tiene_mayuscula = tiene_minuscula = tiene_digito = tiene_especial = 0
+    especiales = "!@#$%&*"
+
+    for letra in contrasena:
+        if "A" <= letra <= "Z": 
+            tiene_mayuscula = 1
+        elif "a" <= letra <= "z":
+            tiene_minuscula = 1
+        elif "0" <= letra <= "9":
+            tiene_digito = 1
+        elif letra in especiales:
+            tiene_especial = 1
+
+    es_valida = int(tiene_longitud and tiene_mayuscula and tiene_minuscula and tiene_digito and tiene_especial)
+    return (es_valida, tiene_longitud, tiene_mayuscula, tiene_minuscula, tiene_digito, tiene_especial)
 
 def solicitar_contrasena() -> str:
     """
