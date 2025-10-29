@@ -38,6 +38,38 @@ def simular_carrera(velocidad1: int, velocidad2: int, velocidad3: int, distancia
     if velocidad1 < 1 or velocidad1 > 10:
         return (0, 0)
 
+    if velocidad2 < 1 or velocidad2 > 10:
+        return (0, 0)
+    
+    if velocidad3 < 1 or velocidad3 > 10:
+        return (0, 0)
+    
+    if distancia_meta <= 0:
+        return (0, 0)
+    
+    posiciones = [0, 0, 0]
+    velocidades = [velocidad1, velocidad2, velocidad3]
+
+    turnos = 0
+    ganador = 0
+
+    while ganador == 0:
+        turnos += 1
+        for i in range(3):
+            posiciones[i] += velocidades[i]
+
+        if posiciones[0] >= distancia_meta:
+            ganador = 1
+        elif posiciones[1] >= distancia_meta:
+            ganador = 2
+        elif posiciones[2] >= distancia_meta:
+            ganador = 3
+
+    return (ganador, turnos)
+
+
+
+
 
 
 
