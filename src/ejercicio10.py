@@ -29,6 +29,17 @@ def calcular_promedio(suma_total: int, cantidad: int) -> float:
         - El promedio debe tener precisión de float
     """
     # TODO: Implementar la función
+
+    if cantidad <= 0:
+        return 0.0 
+
+    if suma_total < 0:
+        return 0.0
+
+    promedio = suma_total / cantidad
+    return float(promedio)
+
+
     return 0.0
 
 
